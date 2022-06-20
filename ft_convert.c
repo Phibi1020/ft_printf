@@ -6,13 +6,13 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:03:31 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 17:32:38 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 18:04:59 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_convert(const char c, va_list args)
+int	ft_convert(const char c, va_list args)
 {
 	if (c == 'c')
 		return (ft_single_char(args));

@@ -6,18 +6,18 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 16:03:28 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 14:59:22 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 18:09:22 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_percent(char c)
+int	ft_percent(char c)
 {
-    int     i;
+	int	i;
 
-    i = write(1, &c, 1);
-    if (i < 0)
-        return (0);
-    return (i);
+	i = write(1, &c, 1);
+	if (i < 0)
+		return (0);
+	return (i);
 }

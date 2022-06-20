@@ -6,14 +6,14 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 14:09:19 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 16:39:43 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 18:12:04 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-void    ft_put_pointer_base(unsigned long num,const char *s, int *i)
+void	ft_put_pointer_base(unsigned long num, const char *s, int *i)
 {
 	if (num >= 16)
 		ft_put_pointer_base(num / 16, s, i);

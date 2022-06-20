@@ -6,13 +6,13 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:37:08 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 17:54:48 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 18:01:11 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_string (va_list args)
+int ft_string(va_list args)
 {
 	char	*str;
 	int		i;

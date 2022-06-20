@@ -6,16 +6,16 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:20:18 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 17:43:56 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 18:04:40 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_read_content(const char *fmt, va_list args)
+static int	ft_read_content(const char *fmt, va_list args)
 {
-	int     ret;
-	int     i;
+	int	ret;
+	int	i;
 
 	i = 0;
 	ret = 0;
@@ -29,7 +29,6 @@ static int ft_read_content(const char *fmt, va_list args)
 				ret += ft_convert(fmt[i], args);
 				i++;
 			}
-
 		}
 		else
 		{
@@ -37,17 +36,16 @@ static int ft_read_content(const char *fmt, va_list args)
 			i++;
 		}
 	}
-	return ret;
+	return (ret);
 }
 
-int ft_printf(const char *fmt, ...)
+int	ft_printf(const char *fmt, ...)
 {
-	va_list args;
-	int     ret;
+	va_list	args;
+	int		ret;
 
 	va_start(args, fmt);
 	ret = ft_read_content(fmt, args);
 	va_end(args);
-
 	return (ret);
 }
