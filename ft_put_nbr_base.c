@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr_hex.c                                       :+:      :+:    :+:   */
+/*   ft_put_nbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 15:54:25 by ftan              #+#    #+#             */
-/*   Updated: 2022/06/20 13:30:22 by ftan             ###   ########.fr       */
+/*   Created: 2022/06/05 12:21:42 by ftan              #+#    #+#             */
+/*   Updated: 2022/06/20 14:44:07 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_nbr_hex(va_list args, char c)
+size_t	ft_strlen(const char *s)
 {
-	int				i;
-	unsigned int 	num;
+	int		i;
 
 	i = 0;
-	num = va_arg(args, unsigned int);
-	if (c == 'x')
-		ft_put_nbr_base(num, "0123456789abcdef", &i);
-	else if (c == 'X')
-		ft_put_nbr_base(num, "0123456789ABCDEF", &i);
+	while (s[i])
+		i++;
 	return (i);
 }
+
+void	ft_put_nbr_base(unsigned int n, const char *s, int *i)
+{
+	// unsigned int	temp;
+
+	// temp = (unsigned int)n;
+	if (n > 16)
+		ft_put_nbr_base(n / ft_strlen(s), s, i);
+	*i += write(1, &(s[n % 16]), 1);
+}
+
+// #include<stdio.h>
+// int main()
+// {
+// 	int i = 0;
+// 	ft_put_nbr_base(-1, "0123456789ABCDEF", &i);
+// 	// printf("\n i: %i\n", i);
+// 	// printf("printf: %p\n", &i);
+// }

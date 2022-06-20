@@ -6,7 +6,7 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:03:31 by ftan              #+#    #+#             */
-/*   Updated: 2022/05/29 15:54:07 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/04 23:16:43 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int ft_convert(const char c, va_list args)
 		return (ft_nbr_hex(args, c));
 	if (c == '%')
 		return (ft_percent('%'));
-	
+	return (0);
 }

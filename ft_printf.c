@@ -6,7 +6,7 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:20:18 by ftan              #+#    #+#             */
-/*   Updated: 2022/05/29 11:29:40 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 15:05:14 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int ft_read_content(const char *fmt, va_list args)
 	int     ret;
 	int     i;
 
+	i = 0;
+	ret = 0;
 	while (fmt[i])
 	{
 		if (fmt[i] == '%')
@@ -26,8 +28,10 @@ int ft_read_content(const char *fmt, va_list args)
 				ret += ft_convert(fmt[i], args);
 		}
 		else
+		{
 			ret += write(1, fmt[i], 1);
 			i++;
+		}
 	}
 	return ret;
 }

@@ -6,11 +6,31 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:36:16 by ftan              #+#    #+#             */
-/*   Updated: 2022/05/29 15:54:09 by ftan             ###   ########.fr       */
+/*   Updated: 2022/06/20 15:02:17 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_putnbr(int num, int *i)
+{
+	char	c;
+
+	if(num == -2147483648)
+	{
+		*i += write(1, "-2147483648", 11);
+		return ;
+	}
+	else if (num < 0)
+	{
+		*i += write(1, "-", 1);
+		num *= -1;
+	}
+	c = '0'+ (num % 10);
+	if (num > 10)
+		ft_putnbr(num, i);
+	*i += write(1, &c, 1);
+}
 
 int ft_decimal(va_list args)
 {
@@ -19,6 +39,6 @@ int ft_decimal(va_list args)
 	
 	num = va_arg(args, int);
 	i = 0;
-	i = ft_putnbr(num);
+	ft_putnbr(num, &i);
 	return (i);
 }
