@@ -20,7 +20,7 @@ all: $(NAME)
 
 $(NAME): $(OBJFILE)
 	ar rcs $@ $^
-	
+
 $(OBJFILE): $(SRCFILE)
 	$(CC) -c $(CFLAGS) $^
 
@@ -32,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all ckean fclean re
+.PHONY: all clean fclean re
